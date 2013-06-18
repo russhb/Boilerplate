@@ -1,0 +1,120 @@
+// -----------------------------------------------
+// Boilerplate - Mixins
+//
+// LESS functions that allow us to create
+// repeatable patterns.
+// -----------------------------------------------
+
+
+
+// Utilities
+// -----------------------------------------------
+
+// Webkit-style focus
+// ----------------------
+
+.tab-focus() {
+	// Default
+	outline: thin dotted #333;
+	
+	// Webskit
+	outline: 0.5rem auto -webkit-focus-ring-color;
+	outline-offset: -0.2rem;
+}
+
+
+
+// CSS3 Properties
+// -----------------------------------------------
+
+
+// Border Radius
+// ----------------------
+
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+	        border-radius: @radius;
+}
+
+// Box Shadow
+// ----------------------
+
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+	   -moz-box-sizing: @shadow;
+	        box-shadow: @shadow;
+}
+
+// Opacity
+// ----------------------
+
+.opacity(@opacity) {
+	opacity: @opacity / 100;
+	filter: ~"alpha(opacity=@{opacity})";
+}
+
+
+// Transitions
+// ----------------------
+
+.transition(@transition) {
+	-webkit-transition: @transition;
+	   -moz-transition: @transition;
+	     -o-transition: @transition;
+	        transition: @transition;
+}
+
+
+
+
+// Backgrounds
+// -----------------------------------------------
+
+// Gradients
+// ----------------------
+
+.gradientBar(@startColor, @endColor, @textColor: @white, @textShadow: 0 -0.1rem 0 rgba(0,0,0,0.25)) {
+	color: @textColor;
+	text-shadow: @textShadow;
+	#gradient > .vertical(@startColor, @endColor);
+	border-color: @endColor @endColor darken(@endColor, 15%);
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) fadein(rgba(0,0,0,0.1), 15%);
+}
+
+#gradient {
+	.vertical(@startColor: #555, @endColor: #333) {
+		background-color: mix(@startColor, @endColor, 60%);
+		background-repeat: repeat-x;
+		background-image: -moz-linear-gradient(top, @startColor, @endColor);
+		background-image: -webkit-linear-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor));
+		background-image: -o-linear-gradient(top, @startColor, @endColor);
+		background-image: linear-gradient(to bottom, @startColor, @endColor);
+	}
+	
+	.directional(@startColor: #555, @endColor: #333, @deg: 45deg) {
+		background-color: @endColor;
+		background-repeat: repeat-x;
+		background-image: -moz-linear-gradient(@deg, @startColor, @endColor);
+		background-image: -webkit-linear-gradient(@deg, @startColor, @endColor);
+		background-image: -o-linear-gradient(@deg, @startColor, @endColor);
+		background-image: linear-gradient(@deg, @startColor, @endColor);
+	}
+}
+
+
+
+// Component Mixins
+// -----------------------------------------------
+
+// Buttons
+// ----------------------
+
+.buttonBackground(@startColor, @endColor, @textColor: @white, @textShadow: 0 -0.1rem 0 rgba(0,0,0,0.25)) {
+	.gradientBar(@startColor, @endColor, @textColor, @textShadow);
+	
+	&:hover, &:focus, &:active, &.disabled, &[disabled] {
+		color: @textColor;
+		background-color: @endColor;
+	}
+}

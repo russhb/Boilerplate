@@ -1,5 +1,7 @@
 // ----------------------------------------------
-// Scaffolding
+// Boilerplate - Scaffolding
+//
+// The very basic structure of the page.
 // ----------------------------------------------
 
 
@@ -17,9 +19,25 @@ html {
 // ----------------------------------------------
 
 body {
+	padding: 0;
+	margin: 0;
+	
 	background-color: @bodyBackground;
 	color: @textColour;
 	font-family: @baseFontFamily;
 	font-size: @baseFontSize;
 	line-height: @baseLineHeight;
+}
+
+
+
+// Links
+// ----------------------------------------------
+
+a {
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: underline;
+	}
 }

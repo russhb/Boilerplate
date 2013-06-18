@@ -1,4 +1,4 @@
-# Xplore Boilerplate 0.1.1
+# Xplore Boilerplate 0.2.0
 
 Demo site for quick site styling.
 

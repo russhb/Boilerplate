@@ -1,5 +1,8 @@
 // ----------------------------------------------
-// Variables
+// Boilerpalte - Variables
+//
+// Everything that's likely to change between
+// designs.
 // ----------------------------------------------
 
 
@@ -9,16 +12,30 @@
 
 // Grays
 // ---------------------
+
 @black:				#000;
 @grayDark:			#333;
 @white:				#fff;
 
 
+// Accents
+// ---------------------
+
+@purpleDark:		#020031;
+@purpleLight:		#6d3353;
+
+
 
 // Scaffolding
 // ----------------------------------------------
+
 @bodyBackground:	@white;
 @textColour:		@grayDark;
+
+// Links
+// ----------------------
+
+@linkColor:			#08c;
 
 
 
@@ -27,5 +44,45 @@
 @sansFontFamily:	"Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @baseFontFamily:	@sansFontFamily;
-@baseFontSize:		1.4em; // 14px
-@baseLineHeight:	2em; // 20px
+@baseFontSize:		1.4rem; // 14px
+@baseLineHeight:	2rem; // 20px
+
+
+
+// Component Sizing
+// ----------------------------------------------
+
+
+// Border Radius
+// ---------------------
+
+@baseBorderRadius:	0.4rem;
+@borderRadiusLarge:	0.6rem;
+
+// Font Size
+// ---------------------
+
+@fontSizeLarge:		1.8rem; // 18px
+
+// Padding
+// ---------------------
+
+@paddingLarge:		1.1rem 1.9rem; // 11px 19px
+
+
+
+
+// Buttons
+// ----------------------------------------------
+
+@btnBackground:						@white;
+@btnBackgroundHighlight:			darken(@btnBackground, 10%);
+@btnBorder:							#ccc;
+@btnBoxShadow:						~"inset 0 0.1rem 0 rgba(255,255,255,0.2), 0 0.1rem 0.2rem rgba(0,0,0,0.05)";
+@btnColor:							@grayDark;
+@btnMargin:							0;
+@btnPadding:						0.4rem 1.2rem;
+@btnTextShadow:						~"0 0.1rem 0.1rem rgba(255,255,255,0.75)";
+
+@btnPrimaryBackground:				@linkColor;
+@btnPrimaryBackgroundHighlight:		spin(@btnPrimaryBackground, 20%);

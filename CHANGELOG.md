@@ -1,3 +1,9 @@
+### 0.2.0 (June 18, 2013)
+
+* Jumbotron header styling.
+
+
+
 ### 0.1.1 (June 17, 2013)
 
 * Removed chromeframe from IE warning banner as it's being shutdown.
