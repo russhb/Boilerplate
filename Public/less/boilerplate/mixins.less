@@ -10,6 +10,24 @@
 // Utilities
 // -----------------------------------------------
 
+// Clearfix
+// ----------------------
+.clearfix() {
+	*zoom: 1;
+	
+	&:before,
+	&:after {
+		display: table;
+		
+		content: "";
+		line-height: 0;
+	}
+	
+	&:after {
+		clear: both;
+	}
+}
+
 // Webkit-style focus
 // ----------------------
 
@@ -116,5 +134,32 @@
 	&:hover, &:focus, &:active, &.disabled, &[disabled] {
 		color: @textColor;
 		background-color: @endColor;
+	}
+}
+
+
+
+// Grid System
+// -----------------------------------------------
+
+.container-fixed() {
+	margin-right: auto;
+	margin-left: auto;
+	.clearfix();
+}
+
+// The Grid
+// ----------------------
+
+#grid {
+	.core(@gridColumnWidth, @gridGutterWidth) {
+	
+		.span(@columns) {
+			width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+		}
+		
+		.container {
+			.span(@gridColumns);
+		}
 	}
 }

@@ -1,3 +1,9 @@
+### 0.2.1 (June 18, 2013)
+
+* Responsive container
+
+
+
 ### 0.2.0 (June 18, 2013)
 
 * Jumbotron header styling.
